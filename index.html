@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cooking Mamas</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cooking Mamas Recipes</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Cooking Mamas</h1>
-  <button id="menu-btn" class="menu-btn">☰ Recipes</button>
-</header>
+  <header>
+    <h1>Cooking Mamas</h1>
+    <button id="menu-btn">☰ Recipes</button>
+  </header>
 
-<!-- Sidebar -->
-<aside id="sidebar" class="sidebar">
-  <button id="close-btn" class="close-btn">×</button>
-  <h2>Categories</h2>
-  <nav>
-    <a href="#american">American</a>
-    <a href="#vietnamese">Vietnamese</a>
-    <a href="#japanese">Japanese</a>
-    <a href="#korean">Korean</a>
-    <a href="#chinese">Chinese</a>
-    <a href="#pickles">Pickles</a>
-    <a href="#misc">Misc</a>
-  </nav>
-</aside>
+  <aside id="sidebar">
+    <button id="close-btn">×</button>
+    <nav>
+      <a href="#american">American</a>
+      <a href="#vietnamese">Vietnamese</a>
+      <a href="#japanese">Japanese</a>
+      <a href="#korean">Korean</a>
+      <a href="#chinese">Chinese</a>
+      <a href="#pickles">Pickles</a>
+      <a href="#misc">Misc</a>
+    </nav>
+  </aside>
 
-<main>
-  <h2 id="american">American</h2>
-  <div class="grid">
-    <a class="card" href="recipes/pasta.html">
-      <img src="images/pasta.jpg" alt="Creamy Pasta">
-      <h2>Creamy Pasta</h2>
-    </a>
-  </div>
+  <main>
+    <h2 id="american">American</h2>
+    <div class="grid">
+      <a href="recipes/pasta.html" class="card">
+        <img src="images/pasta.jpg" alt="Pasta">
+        <h3>Pasta</h3>
+      </a>
+    </div>
 
-  <h2 id="vietnamese">Vietnamese</h2>
-  <div class="grid">
-    <a class="card" href="recipes/pancakes.html">
-      <img src="images/pancakes.jpg" alt="Fluffy Pancakes">
-      <h2>Fluffy Pancakes</h2>
-    </a>
-  </div>
+    <!-- Repeat for other categories -->
 
-  <h2 id="japanese">Japanese</h2><div class="grid"></div>
-  <h2 id="korean">Korean</h2><div class="grid"></div>
-  <h2 id="chinese">Chinese</h2><div class="grid"></div>
-  <h2 id="pickles"
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cooking Mamas</p>
+  </footer>
+
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-btn');
+
+    menuBtn.addEventListener('click', () => {
+      sidebar.style.width = '250px';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.style.width = '0';
+    });
+  </script>
+
+</body>
+</html>

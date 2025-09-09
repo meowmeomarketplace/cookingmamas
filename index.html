@@ -3,59 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cooking Mamas Recipes</title>
+  <title>Cooking Mamas</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Cooking Mamas</h1>
-    <button id="menu-btn">☰ Recipes</button>
-  </header>
+<header>
+  <button id="menu-btn">☰ Recipes</button>
+  <h1>Cooking Mamas</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="categories.html">Categories</a>
+  </nav>
+</header>
 
-  <aside id="sidebar">
-    <button id="close-btn">×</button>
-    <nav>
-      <a href="#american">American</a>
-      <a href="#vietnamese">Vietnamese</a>
-      <a href="#japanese">Japanese</a>
-      <a href="#korean">Korean</a>
-      <a href="#chinese">Chinese</a>
-      <a href="#pickles">Pickles</a>
-      <a href="#misc">Misc</a>
-    </nav>
-  </aside>
+<aside id="sidebar">
+  <button id="close-btn">×</button>
+  <h2>Categories</h2>
+  <nav>
+    <a href="recipes/american.html">American</a>
+    <a href="recipes/vietnamese.html">Vietnamese</a>
+    <a href="recipes/japanese.html">Japanese</a>
+    <a href="recipes/korean.html">Korean</a>
+    <a href="recipes/chinese.html">Chinese</a>
+    <a href="recipes/pickles.html">Pickles</a>
+    <a href="recipes/misc.html">Misc</a>
+  </nav>
+</aside>
 
-  <main>
-    <h2 id="american">American</h2>
-    <div class="grid">
-      <a href="recipes/pasta.html" class="card">
-        <img src="images/pasta.jpg" alt="Pasta">
-        <h3>Pasta</h3>
-      </a>
-    </div>
+<main>
+  <h2>Welcome to Cooking Mamas</h2>
+  <p>Discover your favorite recipes from multiple cuisines!</p>
 
-    <!-- Repeat for other categories -->
+  <h3>Featured Recipes</h3>
+  <div class="grid">
+    <a href="recipes/pasta.html" class="card">
+      <img src="images/pasta.jpg" alt="Pasta">
+      <h3>Pasta</h3>
+    </a>
+    <a href="recipes/pancakes.html" class="card">
+      <img src="images/pancakes.jpg" alt="Pancakes">
+      <h3>Pancakes</h3>
+    </a>
+  </div>
+</main>
 
-  </main>
+<footer>
+  <p>&copy; 2025 Cooking Mamas</p>
+</footer>
 
-  <footer>
-    <p>&copy; 2025 Cooking Mamas</p>
-  </footer>
+<script>
+  const sidebar = document.getElementById('sidebar');
+  const menuBtn = document.getElementById('menu-btn');
+  const closeBtn = document.getElementById('close-btn');
 
-  <script>
-    const sidebar = document.getElementById('sidebar');
-    const menuBtn = document.getElementById('menu-btn');
-    const closeBtn = document.getElementById('close-btn');
+  menuBtn.addEventListener('click', () => {
+    sidebar.style.width = '250px';
+    document.querySelector('main').style.marginLeft = '250px';
+  });
 
-    menuBtn.addEventListener('click', () => {
-      sidebar.style.width = '250px';
-    });
-
-    closeBtn.addEventListener('click', () => {
-      sidebar.style.width = '0';
-    });
-  </script>
+  closeBtn.addEventListener('click', () => {
+    sidebar.style.width = '0';
+    document.querySelector('main').style.marginLeft = '0';
+  });
+</script>
 
 </body>
 </html>

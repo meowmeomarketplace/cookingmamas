@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,32 +7,57 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Cooking Mamas</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="#">Breakfast</a>
-      <a href="#">Lunch</a>
-      <a href="#">Dinner</a>
-      <a href="#">Desserts</a>
-    </nav>
-  </header>
 
-  <main class="grid">
-    <!-- Example recipe cards -->
+<header>
+  <h1>Cooking Mamas</h1>
+  <nav>
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Recipes ▼</button>
+      <div class="dropdown-content">
+        <a href="#american">American</a>
+        <a href="#vietnamese">Vietnamese</a>
+        <a href="#japanese">Japanese</a>
+        <a href="#korean">Korean</a>
+        <a href="#chinese">Chinese</a>
+        <a href="#pickles">Pickles</a>
+        <a href="#misc">Misc</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <h2 id="american">American</h2>
+  <div class="grid">
     <a class="card" href="recipes/pasta.html">
-      <img src="images/pasta.jpg" alt="Creamy Pasta" />
+      <img src="images/pasta.jpg" alt="Creamy Pasta">
       <h2>Creamy Pasta</h2>
     </a>
+  </div>
 
+  <h2 id="vietnamese">Vietnamese</h2>
+  <div class="grid">
     <a class="card" href="recipes/pancakes.html">
-      <img src="images/pancakes.jpg" alt="Fluffy Pancakes" />
+      <img src="images/pancakes.jpg" alt="Fluffy Pancakes">
       <h2>Fluffy Pancakes</h2>
     </a>
-  </main>
+  </div>
 
-  <footer>
-    <p>© 2025 Cooking Mamas</p>
-  </footer>
+  <!-- Add other categories similarly -->
+  <h2 id="japanese">Japanese</h2><div class="grid"></div>
+  <h2 id="korean">Korean</h2><div class="grid"></div>
+  <h2 id="chinese">Chinese</h2><div class="grid"></div>
+  <h2 id="pickles">Pickles</h2><div class="grid"></div>
+  <h2 id="misc">Misc</h2><div class="grid"></div>
+
+</main>
+
+<footer>
+  <p>© 2025 Cooking Mamas</p>
+</footer>
+
 </body>
 </html>

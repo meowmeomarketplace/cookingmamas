@@ -10,26 +10,25 @@
 
 <header>
   <h1>Cooking Mamas</h1>
-  <nav>
-    <a href="index.html">Home</a>
-
-    <div class="dropdown">
-      <button class="dropbtn">Recipes ▼</button>
-      <div class="dropdown-content">
-        <a href="#american">American</a>
-        <a href="#vietnamese">Vietnamese</a>
-        <a href="#japanese">Japanese</a>
-        <a href="#korean">Korean</a>
-        <a href="#chinese">Chinese</a>
-        <a href="#pickles">Pickles</a>
-        <a href="#misc">Misc</a>
-      </div>
-    </div>
-  </nav>
+  <button id="menu-btn" class="menu-btn">☰ Recipes</button>
 </header>
 
-<main>
+<!-- Sidebar -->
+<aside id="sidebar" class="sidebar">
+  <button id="close-btn" class="close-btn">×</button>
+  <h2>Categories</h2>
+  <nav>
+    <a href="#american">American</a>
+    <a href="#vietnamese">Vietnamese</a>
+    <a href="#japanese">Japanese</a>
+    <a href="#korean">Korean</a>
+    <a href="#chinese">Chinese</a>
+    <a href="#pickles">Pickles</a>
+    <a href="#misc">Misc</a>
+  </nav>
+</aside>
 
+<main>
   <h2 id="american">American</h2>
   <div class="grid">
     <a class="card" href="recipes/pasta.html">
@@ -46,18 +45,7 @@
     </a>
   </div>
 
-  <!-- Add other categories similarly -->
   <h2 id="japanese">Japanese</h2><div class="grid"></div>
   <h2 id="korean">Korean</h2><div class="grid"></div>
   <h2 id="chinese">Chinese</h2><div class="grid"></div>
-  <h2 id="pickles">Pickles</h2><div class="grid"></div>
-  <h2 id="misc">Misc</h2><div class="grid"></div>
-
-</main>
-
-<footer>
-  <p>© 2025 Cooking Mamas</p>
-</footer>
-
-</body>
-</html>
+  <h2 id="pickles"

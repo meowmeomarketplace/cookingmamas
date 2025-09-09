@@ -9,41 +9,43 @@
 <body>
 
 <header>
-  <button id="menu-btn">☰ Recipes</button>
   <h1>Cooking Mamas</h1>
   <nav>
     <a href="index.html">Home</a>
-    <a href="categories.html">Categories</a>
+    <a href="index.html">Categories</a>
   </nav>
 </header>
 
-<aside id="sidebar">
-  <button id="close-btn">×</button>
-  <h2>Categories</h2>
-  <nav>
-    <a href="recipes/american.html">American</a>
-    <a href="recipes/vietnamese.html">Vietnamese</a>
-    <a href="recipes/japanese.html">Japanese</a>
-    <a href="recipes/korean.html">Korean</a>
-    <a href="recipes/chinese.html">Chinese</a>
-    <a href="recipes/pickles.html">Pickles</a>
-    <a href="recipes/misc.html">Misc</a>
-  </nav>
-</aside>
-
 <main>
-  <h2>Welcome to Cooking Mamas</h2>
-  <p>Discover your favorite recipes from multiple cuisines!</p>
-
-  <h3>Featured Recipes</h3>
+  <h2>Recipe Categories</h2>
   <div class="grid">
-    <a href="recipes/pasta.html" class="card">
-      <img src="images/pasta.jpg" alt="Pasta">
-      <h3>Pasta</h3>
+    <a href="recipes/american.html" class="card">
+      <img src="images/american.jpg" alt="American Recipes">
+      <h3>American</h3>
     </a>
-    <a href="recipes/pancakes.html" class="card">
-      <img src="images/pancakes.jpg" alt="Pancakes">
-      <h3>Pancakes</h3>
+    <a href="recipes/vietnamese.html" class="card">
+      <img src="images/vietnamese.jpg" alt="Vietnamese Recipes">
+      <h3>Vietnamese</h3>
+    </a>
+    <a href="recipes/japanese.html" class="card">
+      <img src="images/japanese.jpg" alt="Japanese Recipes">
+      <h3>Japanese</h3>
+    </a>
+    <a href="recipes/korean.html" class="card">
+      <img src="images/korean.jpg" alt="Korean Recipes">
+      <h3>Korean</h3>
+    </a>
+    <a href="recipes/chinese.html" class="card">
+      <img src="images/chinese.jpg" alt="Chinese Recipes">
+      <h3>Chinese</h3>
+    </a>
+    <a href="recipes/pickles.html" class="card">
+      <img src="images/pickles.jpg" alt="Pickles Recipes">
+      <h3>Pickles</h3>
+    </a>
+    <a href="recipes/misc.html" class="card">
+      <img src="images/misc.jpg" alt="Misc Recipes">
+      <h3>Misc</h3>
     </a>
   </div>
 </main>
@@ -51,22 +53,6 @@
 <footer>
   <p>&copy; 2025 Cooking Mamas</p>
 </footer>
-
-<script>
-  const sidebar = document.getElementById('sidebar');
-  const menuBtn = document.getElementById('menu-btn');
-  const closeBtn = document.getElementById('close-btn');
-
-  menuBtn.addEventListener('click', () => {
-    sidebar.style.width = '250px';
-    document.querySelector('main').style.marginLeft = '250px';
-  });
-
-  closeBtn.addEventListener('click', () => {
-    sidebar.style.width = '0';
-    document.querySelector('main').style.marginLeft = '0';
-  });
-</script>
 
 </body>
 </html>

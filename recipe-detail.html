@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1 id="recipe-title">Recipe</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="recipes.html">Back to Recipes</a>
+  </nav>
+</header>
+
+<main id="recipe-content" class="recipe-content"></main>
+
+<footer>
+  <p>&copy; 2025 Cooking Mamas</p>
+</footer>
+
+<script>
+const recipe = JSON.parse(localStorage.getItem("selectedRecipe"));
+document.getElementById("recipe-title").textContent = recipe.title;
+
+const main = document.getElementById("recipe-content");
+main.innerHTML = `
+  <img src="images/${recipe.category.toLowerCase()}/${recipe.image}" alt="${recipe.title}" class="recipe-img">
+  <h2>Ingredients</h2>
+  <ul>${recipe.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
+  <h2>Instructions</h2>
+  <ol>${recipe.instructions.map(i => `<li>${i}</li>`).join('')}</ol>
+`;
+</script>
+
+</body>
+</html>

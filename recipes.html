@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1 id="category-title">Recipes</h1>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main>
+  <div class="grid" id="recipes-grid"></div>
+</main>
+
+<footer>
+  <p>&copy; 2025 Cooking Mamas</p>
+</footer>
+
+<script>
+fetch("recipes.json")
+.then(res => res.json())
+.then(data => {
+  const selectedCategory = localStorage.getItem("selectedCategory");
+  document.getElementById("category-title").textContent = selectedCategory + " Recipes";
+
+  const recipesGrid = document.getElementById("recipes-grid");
+  const recipes = data.filter(r => r.category === selectedCategory);
+
+  recipes.forEach(recipe => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <img src="images/${recipe.category.toLowerCase()}/${recipe.image}" alt="${recipe.title}">
+      <h3>${recipe.title}</h3>
+    `;
+    card.addEventListener("click", () => {
+      localStorage.setItem("selectedRecipe", JSON.stringify(recipe));
+      window.location.href = "recipe-detail.html";
+    });
+    recipesGrid.appendChild(card);
+  });
+});
+</script>
+
+</body>
+</html>

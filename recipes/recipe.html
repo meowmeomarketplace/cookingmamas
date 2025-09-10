@@ -10,18 +10,24 @@
 
 <header>
   <h1 id="recipe-title">Recipe</h1>
-  <nav>
-    <a href="../index.html">Home</a>
-    <a id="back-link" href="../category.html">Back to Category</a>
-  </nav>
 </header>
 
 <main>
+  <!-- Navigation buttons -->
+  <div class="nav-buttons">
+    <a class="nav-btn" href="../index.html">Home</a>
+    <a class="nav-btn" id="back-link" href="../category.html">Back to Category</a>
+  </div>
+
+  <!-- Recipe Image -->
   <img id="recipe-img" class="recipe-img" alt="Recipe Image">
+
+  <!-- Ingredients -->
   <h2>Ingredients</h2>
   <ul id="ingredients"></ul>
-  <button id="reset-btn">Reset Checklist</button>
+  <button id="reset-btn" class="nav-btn">Reset Checklist</button>
 
+  <!-- Instructions -->
   <h2>Instructions</h2>
   <ol id="instructions"></ol>
 </main>
@@ -46,7 +52,6 @@ async function loadRecipe() {
   }
 
   document.getElementById("recipe-title").textContent = recipe.title;
-  // Image path relative to recipes/ folder
   document.getElementById("recipe-img").src = `../images/${recipe.image}`;
   document.getElementById("recipe-img").alt = recipe.title;
 

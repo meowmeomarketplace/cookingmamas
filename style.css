@@ -11,7 +11,7 @@ body {
   background-color: #f9fafb;
   color: #1f2937;
   line-height: 1.75;
-  font-size: 1.05rem;
+  font-size: 1.05rem; /* slightly bigger base font */
 }
 
 /* Header */
@@ -32,6 +32,25 @@ header h1 {
   font-weight: 600;
 }
 
+/* Navigation links */
+nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #facc15; /* warm gold accent */
+}
+
+/* Remove default blue focus */
+a, button, input, textarea {
+  outline: none;
+}
+
 /* Search bar */
 #search {
   margin-top: 0.8rem;
@@ -46,12 +65,49 @@ header h1 {
 
 #search:focus {
   border-color: #facc15;
-  outline: none;
+}
+
+/* Sidebar */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #111827;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+}
+
+#sidebar nav a {
+  padding: 12px 10px 12px 32px;
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: #e5e7eb;
+  display: block;
+  transition: 0.3s;
+}
+
+#sidebar nav a:hover {
+  background-color: #facc15;
+  color: #111827;
+}
+
+#sidebar #close-btn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 /* Main Content */
 main {
-  padding: 2rem 1.5rem 10rem; /* increased bottom padding for footer */
+  padding: 2rem 1.5rem 10rem; /* bottom padding prevents footer overlap */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -167,7 +223,7 @@ footer {
   letter-spacing: 0.5px;
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media (max-width: 1024px) {
   main {
     padding: 2rem 1rem 10rem;
@@ -193,7 +249,7 @@ footer {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -210,4 +266,47 @@ footer {
   header h1 {
     font-size: 1.75rem;
   }
+
+  /* Mobile Recipe Page Fixes */
+  .recipe-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .recipe-content img.recipe-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .recipe-content h2,
+  .recipe-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .recipe-content ul,
+  .recipe-content ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .recipe-content li {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+  }
+
+  .recipe-content input[type="checkbox"] {
+    transform: scale(1.1);
+    margin-right: 0.5rem;
+  }
+
+  .recipe-content label {
+    font-size: 1rem;
+  }
 }
+

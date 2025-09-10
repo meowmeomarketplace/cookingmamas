@@ -17,7 +17,7 @@
     "title": "Mapo Tofu",
     "category": "Chinese",
     "image": "mapo-tofu.jpg",
-    "ingredients": ["soft tofu", "4 dried shitake mushrooms", "2tbsp doubanjiang", "1tbsp black bean sauce", "crushed sichuan peppercorns", "green onions", "minced ginger", "2tsp shaoxing whine", "five spice", "sugar", "cornstarch"],
+    "ingredients": ["soft tofu", "4 dried shitake mushrooms", "2tbsp doubanjiang", "1tbsp black bean sauce", "crushed sichuan peppercorns", "green onions", "minced ginger", "2tsp shaoxing wine", "five spice", "sugar", "cornstarch"],
     "instructions": ["Soak mushrooms in 1cup hot water.", "Saute doubanjiang, black bean sauce, sichuan peppercorn, green onion, minced ginger.", "Add shaoxing wine, mushroom water, five spice, and sugar. Simmer.", "Add tofu and cornstarch slurry." ]
   },
    {
@@ -45,7 +45,7 @@
     "title": "Doenjang Jjigae",
     "category": "Korean",
     "image": "doenjang-jjigae.jpg",
-    "ingredients": ["pork/beef","2tbsp deonjang","1tsp gochugaru","2cups water/broth", "cubed onion", "cubed zucchini", "2 minced garlic", "cubed medium firm tofu", "jalapeno/green chili"],
+    "ingredients": ["pork/beef","2tbsp doenjang","1tsp gochugaru","2cups water/broth", "cubed onion", "cubed zucchini", "2 minced garlic", "cubed medium firm tofu", "jalapeno/green chili"],
     "instructions": ["Saute meat, add doenjang, gochugaru, onions, and garlic.","Add water/broth and zucchini. Boil", "Add tofu and peppers."]
   },
    {

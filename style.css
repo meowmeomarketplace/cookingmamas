@@ -287,9 +287,18 @@ footer {
     font-size: 1rem;
   }
 
-  /* Nav buttons stack vertically on very small screens */
+  /* Keep nav buttons side by side on typical phones */
   .nav-buttons {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 0.8rem;
+  }
+
+  /* Only stack nav buttons on extremely narrow screens (<320px) */
+  @media (max-width: 320px) {
+    .nav-buttons {
+      flex-direction: column;
+      gap: 0.6rem;
+    }
   }
 }

@@ -1,5 +1,19 @@
 [
    {
+    "title": "Gyeran Jjim",
+    "category": "Korean",
+    "image": "gyeran-jjim.jpg",
+    "ingredients": ["4 eggs", "1cup water/broth", "green onion", "sesame seeds"],
+    "instructions": ["Mix eggs and salt", "Spread sesame oil at bottom of clay pot", "Cook 6-8 min with stirring in between" ]
+  },
+   {
+    "title": "Ssamjjang",
+    "category": "Korean",
+    "image": "ssamjjang.jpg",
+    "ingredients": ["2tbsp doenjjang","1tbsp gochujang","1tbsp honey/oligo syrup", "1tbsp sesame oil", "3 minced garlic", "minced green peppers", "green onion", "sesame seeds"],
+    "instructions": ["Add and mix."]
+  },
+   {
     "title": "Soondubu Jjigae",
     "category": "Korean",
     "image": "doenjang-jjigae.jpg",

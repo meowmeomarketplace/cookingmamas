@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cooking Mamas</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -15,8 +15,17 @@
 
 <main>
   <h2>Recipe Categories</h2>
+
+  <!-- Categories grid (visible by default) -->
   <div class="grid" id="categories-grid"></div>
+
+  <!-- Search results (hidden until searching) -->
   <div class="grid" id="search-results" style="display:none;"></div>
+
+  <!-- Friendly "no results" message -->
+  <p id="no-results" style="display:none; text-align:center; margin-top:1rem; color:#666;">
+    No recipes found.
+  </p>
 </main>
 
 <footer>
@@ -24,62 +33,78 @@
 </footer>
 
 <script>
+/* --- Categories list (edit if you want different order) --- */
 const categories = ["American","Vietnamese","Japanese","Korean","Chinese","Pickles","Misc"];
-const grid = document.getElementById("categories-grid");
+
+const categoriesGrid = document.getElementById("categories-grid");
 const searchResults = document.getElementById("search-results");
 const searchInput = document.getElementById("search");
+const noResults = document.getElementById("no-results");
 
-// Render categories
-categories.forEach(cat => {
-  const card = document.createElement("a");
-  card.href = "#";
-  card.className = "card category-card";
-  card.innerHTML = `<h3>${cat}</h3>`;
-  card.addEventListener("click", e => {
-    e.preventDefault();
-    localStorage.setItem("selectedCategory", cat);
-    window.location.href = "recipes.html";
+/* --- Render category cards (links to category.html?category=...) --- */
+function renderCategories() {
+  categoriesGrid.innerHTML = "";
+  categories.forEach(cat => {
+    const a = document.createElement("a");
+    a.href = `category.html?category=${encodeURIComponent(cat)}`;
+    a.className = "card category-card";
+    a.innerHTML = `<h3>${cat}</h3>`;
+    categoriesGrid.appendChild(a);
   });
-  grid.appendChild(card);
-});
+}
 
-// Handle search
-searchInput.addEventListener("input", e => {
-  const query = e.target.value.toLowerCase();
+/* --- Search recipes by name (shows recipe cards linking to recipe page) --- */
+searchInput.addEventListener("input", (e) => {
+  const q = e.target.value.trim().toLowerCase();
 
-  if (!query) {
-    grid.style.display = "grid";
+  // If search empty -> show categories, hide results
+  if (!q) {
+    categoriesGrid.style.display = "grid";
     searchResults.style.display = "none";
+    noResults.style.display = "none";
     return;
   }
 
+  // Otherwise search recipes.json by title
   fetch("recipes.json")
-    .then(res => res.json())
+    .then(r => r.json())
     .then(data => {
-      const filtered = data.filter(r => r.title.toLowerCase().includes(query));
-
-      // Show results
+      const filtered = data.filter(r => r.title.toLowerCase().includes(q));
       searchResults.innerHTML = "";
+
+      if (filtered.length === 0) {
+        // show no results
+        categoriesGrid.style.display = "none";
+        searchResults.style.display = "none";
+        noResults.style.display = "block";
+        return;
+      }
+
+      noResults.style.display = "none";
+      categoriesGrid.style.display = "none";
+      searchResults.style.display = "grid";
+
       filtered.forEach(recipe => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `
-          <img src="images/${recipe.category.toLowerCase()}/${recipe.image}" alt="${recipe.title}">
+        const a = document.createElement("a");
+        a.href = `recipes/recipe.html?recipe=${encodeURIComponent(recipe.title)}`;
+        a.className = "card";
+        // image path uses images/<filename> (consistent with your JSON)
+        a.innerHTML = `
+          <img src="images/${recipe.image}" alt="${recipe.title}">
           <h3>${recipe.title}</h3>
         `;
-        card.addEventListener("click", () => {
-          localStorage.setItem("selectedRecipe", JSON.stringify(recipe));
-          window.location.href = "recipe-detail.html";
-        });
-        searchResults.appendChild(card);
+        searchResults.appendChild(a);
       });
-
-      // Toggle visibility
-      grid.style.display = "none";
-      searchResults.style.display = "grid";
+    })
+    .catch(err => {
+      console.error("Failed to load recipes.json:", err);
+      categoriesGrid.style.display = "grid";
+      searchResults.style.display = "none";
     });
 });
-</script>
 
+/* --- Initialize page --- */
+renderCategories();
+</script>
 </body>
 </html>

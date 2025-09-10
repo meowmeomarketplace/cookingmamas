@@ -5,14 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Category Recipes</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Navigation buttons in header */
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 0.8rem;
+      flex-wrap: nowrap; /* keep buttons in a row */
+    }
+
+    .nav-btn {
+      min-width: 0;
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+    /* Stack buttons only on extremely narrow screens */
+    @media (max-width: 320px) {
+      .nav-buttons {
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
   <h1 id="category-title">Recipes</h1>
-  <nav>
-    <a href="index.html">Home</a>
-  </nav>
+
+  <!-- Navigation buttons inside header -->
+  <div class="nav-buttons">
+    <a class="nav-btn" href="index.html">Home</a>
+  </div>
 </header>
 
 <main>

@@ -27,14 +27,9 @@
 
   categories.forEach(cat => {
     const card = document.createElement("a");
-    card.href = `#${cat.toLowerCase()}`;
+    card.href = `category.html?category=${encodeURIComponent(cat)}`;
     card.className = "card category-card";
     card.innerHTML = `<h3>${cat}</h3>`;
-    card.addEventListener("click", e => {
-      e.preventDefault();
-      localStorage.setItem("selectedCategory", cat);
-      window.location.href = "recipes.html";
-    });
     grid.appendChild(card);
   });
 </script>

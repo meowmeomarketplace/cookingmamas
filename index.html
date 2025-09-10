@@ -5,49 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cooking Mamas</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Navigation buttons in header */
-    .nav-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 0.8rem;
-      flex-wrap: nowrap; /* keep buttons in a row */
-    }
-
-    .nav-btn {
-      min-width: 0;
-      flex: 1 1 auto;
-      text-align: center;
-    }
-
-    /* Stack buttons only on extremely narrow screens */
-    @media (max-width: 320px) {
-      .nav-buttons {
-        flex-direction: column;
-        gap: 0.6rem;
-      }
-    }
-
-    /* Keep search bar full width on mobile */
-    header #search {
-      margin-top: 0.6rem;
-      width: 100%;
-      max-width: 420px;
-    }
-  </style>
 </head>
 <body>
 
 <header>
   <h1>Cooking Mamas</h1>
-
-  <!-- Navigation buttons inside header -->
-  <div class="nav-buttons">
-    <a class="nav-btn" href="index.html">Home</a>
-    <a class="nav-btn" href="category.html">Back to Categories</a>
-  </div>
-
   <!-- Search bar -->
   <input type="text" id="search" placeholder="Search recipes...">
 </header>

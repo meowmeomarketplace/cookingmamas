@@ -10,7 +10,9 @@
 
 <header>
   <h1>Cooking Mamas</h1>
-  <input type="text" id="search" placeholder="Search recipes...">
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Search recipes...">
+  </div>
 </header>
 
 <main>
@@ -88,7 +90,6 @@ searchInput.addEventListener("input", (e) => {
         const a = document.createElement("a");
         a.href = `recipes/recipe.html?recipe=${encodeURIComponent(recipe.title)}`;
         a.className = "card";
-        // image path uses images/<filename> (consistent with your JSON)
         a.innerHTML = `
           <img src="images/${recipe.image}" alt="${recipe.title}">
           <h3>${recipe.title}</h3>

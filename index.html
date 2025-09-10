@@ -10,15 +10,13 @@
 
 <header>
   <h1>Cooking Mamas</h1>
-  <div class="search-container">
-    <input type="text" id="search" placeholder="Search recipes...">
-  </div>
+  <input type="text" id="search" placeholder="Search recipes...">
 </header>
 
 <main>
   <h2>Recipe Categories</h2>
 
-  <!-- Categories grid (visible by default) -->
+  <!-- Categories grid -->
   <div class="grid" id="categories-grid"></div>
 
   <!-- Search results (hidden until searching) -->
@@ -28,6 +26,12 @@
   <p id="no-results" style="display:none; text-align:center; margin-top:1rem; color:#666;">
     No recipes found.
   </p>
+
+  <!-- Optional: Home navigation buttons area (can remove if redundant) -->
+  <div class="nav-buttons">
+    <a class="nav-btn" href="index.html">Home</a>
+    <a class="nav-btn" href="category.html">Back to Categories</a>
+  </div>
 </main>
 
 <footer>
@@ -35,7 +39,7 @@
 </footer>
 
 <script>
-/* --- Categories list (edit if you want different order) --- */
+/* --- Categories list --- */
 const categories = ["American","Vietnamese","Japanese","Korean","Chinese","Pickles","Misc"];
 
 const categoriesGrid = document.getElementById("categories-grid");
@@ -43,7 +47,7 @@ const searchResults = document.getElementById("search-results");
 const searchInput = document.getElementById("search");
 const noResults = document.getElementById("no-results");
 
-/* --- Render category cards (links to category.html?category=...) --- */
+/* --- Render category cards --- */
 function renderCategories() {
   categoriesGrid.innerHTML = "";
   categories.forEach(cat => {
@@ -55,11 +59,10 @@ function renderCategories() {
   });
 }
 
-/* --- Search recipes by name (shows recipe cards linking to recipe page) --- */
+/* --- Search recipes by name --- */
 searchInput.addEventListener("input", (e) => {
   const q = e.target.value.trim().toLowerCase();
 
-  // If search empty -> show categories, hide results
   if (!q) {
     categoriesGrid.style.display = "grid";
     searchResults.style.display = "none";
@@ -67,7 +70,6 @@ searchInput.addEventListener("input", (e) => {
     return;
   }
 
-  // Otherwise search recipes.json by title
   fetch("recipes.json")
     .then(r => r.json())
     .then(data => {
@@ -75,7 +77,6 @@ searchInput.addEventListener("input", (e) => {
       searchResults.innerHTML = "";
 
       if (filtered.length === 0) {
-        // show no results
         categoriesGrid.style.display = "none";
         searchResults.style.display = "none";
         noResults.style.display = "block";
@@ -107,5 +108,6 @@ searchInput.addEventListener("input", (e) => {
 /* --- Initialize page --- */
 renderCategories();
 </script>
+
 </body>
 </html>

@@ -1,9 +1,16 @@
 [
+   {
+    "title": "Thit Kho",
+    "category": "Vietnamese",
+    "image": "thit-kho.jpg",
+    "ingredients": ["2lbs pork belly","1tbsp sugar","minced shallot","minced garlic", "6oz coke zero","3tbsp fish sauce", "3-5 boiled eggs", "2 fresh chili", "pepper to taste"],
+    "instructions": ["Flash boil pork belly.","Caramelize sugar and sear pork.", "Add shallot and garlic.", "Add coke zero, fish sauce, and pepper. Braise for 1hour.", "Simmer boiled eggs for 15min."]
+  },
   {
     "title": "Corn Bread Pudding",
     "category": "American",
     "image": "corn-bread-pudding.jpg",
-    "ingredients": ["1 jiffy corn muffin mix","1 can creamed corn","2 cans drained whole kernel corn","1 cup sour cream", "1/2 cup melted butter","Salt to taste"],
+    "ingredients": ["1 jiffy corn muffin mix","1 can creamed corn","2 cans drained whole kernel corn","1 cup sour cream", "1/2 cup melted butter","salt to taste"],
     "instructions": ["Gently fold and mix.","Bake @350 for 45min."]
   },
   {

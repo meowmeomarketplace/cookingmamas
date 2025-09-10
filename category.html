@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Categories</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Categories</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="grid" id="categories"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cooking Mamas</p>
+  </footer>
+
+  <script>
+    async function loadCategories() {
+      const res = await fetch("recipes.json");
+      const data = await res.json();
+
+      // Collect unique categories
+      const categories = [...new Set(data.map(r => r.category))];
+
+      const container = document.getElementById("categories");
+      categories.forEach(cat => {
+        const card = document.createElement("a");
+        card.href = `category.html?category=${encodeURIComponent(cat)}`;
+        card.className = "card";
+        card.innerHTML = `<h3>${cat}</h3>`;
+        container.appendChild(card);
+      });
+    }
+
+    loadCategories();
+  </script>
+</body>
+</html>

@@ -1,5 +1,12 @@
 [
    {
+    "title": "Doenjang Jjigae",
+    "category": "Korean",
+    "image": "doenjang-jjigae.jpg",
+    "ingredients": ["pork/beef","2tbsp deonjang","1tsp gochugaru","2cups water", "cubed onion", "cubed zucchini", "2 minced garlic", "cubed tofu", "jalapeno/green chili"],
+    "instructions": ["Saute meat, add doenjang, gochugaru, onions, and garlic.","Add water and zucchini. Boil", "Add tofu and peppers."]
+  },
+   {
     "title": "Thit Kho",
     "category": "Vietnamese",
     "image": "thit-kho.jpg",
@@ -12,26 +19,5 @@
     "image": "corn-bread-pudding.jpg",
     "ingredients": ["1 jiffy corn muffin mix","1 can creamed corn","2 cans drained whole kernel corn","1 cup sour cream", "1/2 cup melted butter","salt to taste"],
     "instructions": ["Gently fold and mix.","Bake @350 for 45min."]
-  },
-  {
-    "title": "Pasta",
-    "category": "American",
-    "image": "pasta.jpg",
-    "ingredients": ["200g pasta","2 cloves garlic","1 cup cream","Salt and pepper to taste"],
-    "instructions": ["Boil pasta until al dente.","Sauté garlic in olive oil.","Add cream, salt, and pepper to the pan.","Combine pasta with the sauce and serve."]
-  },
-  {
-    "title": "Pancakes",
-    "category": "American",
-    "image": "pancakes.jpg",
-    "ingredients": ["1 cup flour","1 egg","1 cup milk","1 tsp baking powder","Pinch of salt"],
-    "instructions": ["Mix all ingredients until smooth.","Heat pan and pour batter.","Cook until bubbles form then flip.","Serve with syrup."]
-  },
-  {
-    "title": "Pho",
-    "category": "Vietnamese",
-    "image": "pho.jpg",
-    "ingredients": ["Beef bones","Rice noodles","Onions and ginger","Star anise, cinnamon"],
-    "instructions": ["Simmer beef bones for broth.","Char onions and ginger.","Add spices and simmer for hours.","Serve with noodles and herbs."]
   }
 ]

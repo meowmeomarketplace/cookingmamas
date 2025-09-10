@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1 id="recipe-title">Recipe</h1>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a id="back-link" href="../category.html">Back to Category</a>
+  </nav>
+</header>
+
+<main>
+  <img id="recipe-img" class="recipe-img" alt="Recipe Image">
+  <h2>Ingredients</h2>
+  <ul id="ingredients"></ul>
+  <button id="reset-btn">Reset Checklist</button>
+
+  <h2>Instructions</h2>
+  <ol id="instructions"></ol>
+</main>
+
+<footer>
+  <p>&copy; 2025 Cooking Mamas</p>
+</footer>
+
+<script>
+async function loadRecipe() {
+  const res = await fetch("../recipes.json");
+  const data = await res.json();
+
+  const params = new URLSearchParams(window.location.search);
+  const recipeTitle = params.get("recipe");
+
+  const recipe = data.find(r => r.title === recipeTitle);
+
+  if (!recipe) {
+    document.getElementById("recipe-title").textContent = "Recipe Not Found";
+    return;
+  }
+
+  document.getElementById("recipe-title").textContent = recipe.title;
+  // Image path relative to recipes/ folder
+  document.getElementById("recipe-img").src = `../images/${recipe.image}`;
+  document.getElementById("recipe-img").alt = recipe.title;
+
+  const ingredientsList = document.getElementById("ingredients");
+  recipe.ingredients.forEach(item => {
+    const li = document.createElement("li");
+    li.innerHTML = `<input type="checkbox"> ${item}`;
+    ingredientsList.appendChild(li);
+  });
+
+  const instructionsList = document.getElementById("instructions");
+  recipe.instructions.forEach(step => {
+    const li = document.createElement("li");
+    li.textContent = step;
+    instructionsList.appendChild(li);
+  });
+
+  document.getElementById("reset-btn").onclick = () => {
+    document.querySelectorAll("#ingredients input[type=checkbox]").forEach(cb => cb.checked = false);
+  };
+
+  // Back link points to the correct category page
+  document.getElementById("back-link").href = `../category.html?category=${encodeURIComponent(recipe.category)}`;
+}
+
+loadRecipe();
+</script>
+
+</body>
+</html>

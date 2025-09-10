@@ -1,5 +1,19 @@
 [
    {
+    "title": "Pork Buta",
+    "category": "Japanese",
+    "image": "pork-buta.jpg",
+    "ingredients": ["sliced pork", "potato starch", "sliced onions" "sauce: 2tbsp soy sauce, 2tbsp sake, 1tbsp mirin, 1tbsp sugar, grated ginger + garlic"],
+    "instructions": ["Mix pork and potato starch.", "Saute pork and onions.", "Add sauce. Simmer." ]
+  },
+   {
+    "title": "Potato Salad",
+    "category": "Japanese",
+    "image": "potato-salad.jpg",
+    "ingredients": ["4 potatoes", "2 boiled eggs", "sliced cucumber", "sliced carrots", "3tsp rice vinegar", "7tbsp mayo", "dashi"],
+    "instructions": ["Boil potatoes. Drain.", "Add rice vinegar and dashi. Mash. Cool.", "Add mayo, boiled eggs, cucumber, and carrots." ]
+  },
+   {
     "title": "Mapo Tofu",
     "category": "Chinese",
     "image": "mapo-tofu.jpg",

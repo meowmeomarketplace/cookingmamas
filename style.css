@@ -153,6 +153,39 @@ h2 {
   font-size: 1.1rem;
 }
 
+/* Navigation buttons (Home / Back) */
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #111827;
+  color: #f9fafb;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.nav-btn:hover {
+  background-color: #1f2937;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+.nav-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
 /* Footer */
 footer {
   background-color: #111827;
@@ -164,17 +197,6 @@ footer {
   width: 100%;
   font-size: 1rem;
   letter-spacing: 0.5px;
-}
-
-/* Home / Back link styling (restored original orange accent) */
-.home-link, .back-link {
-  color: #d35400;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.home-link:hover, .back-link:hover {
-  color: #e67e22;
 }
 
 /* Responsive adjustments */
@@ -203,7 +225,7 @@ footer {
   }
 }
 
-/* Mobile Recipe Page Fixes */
+/* Mobile recipe page & nav button fixes */
 @media (max-width: 600px) {
   .grid {
     grid-template-columns: 1fr;
@@ -222,7 +244,7 @@ footer {
     font-size: 1.75rem;
   }
 
-  /* Ensure instructions are fully visible on mobile */
+  /* Recipe content full width on mobile */
   .recipe-content {
     width: 100%;
     padding-left: 0.8rem;
@@ -263,5 +285,11 @@ footer {
 
   .recipe-content label {
     font-size: 1rem;
+  }
+
+  /* Nav buttons stack vertically on very small screens */
+  .nav-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
   }
 }

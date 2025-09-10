@@ -5,6 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipe</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Override for nav buttons to stay side by side */
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 0.8rem;
+      flex-wrap: nowrap; /* keep buttons in a row */
+    }
+
+    @media (max-width: 400px) {
+      .nav-buttons {
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+    }
+
+    /* Optional: equal width buttons */
+    .nav-btn {
+      min-width: 140px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 

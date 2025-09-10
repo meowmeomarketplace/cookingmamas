@@ -1,43 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pasta Recipe</title>
-  <link rel="stylesheet" href="../style.css">
-</head>
-<body>
-
-<header>
-  <h1>Pasta</h1>
-  <nav>
-    <a href="../index.html">Home</a>
-    <a href="american.html">American Recipes</a>
-  </nav>
-</header>
-
-<main class="recipe-content">
+<main>
   <img src="../images/pasta.jpg" alt="Pasta" class="recipe-img">
+
   <h2>Ingredients</h2>
-  <ul>
-    <li>200g pasta</li>
-    <li>2 cloves garlic</li>
-    <li>1 cup cream</li>
-    <li>Salt and pepper to taste</li>
+  <ul id="ingredients">
+    <li><input type="checkbox"> 200g pasta</li>
+    <li><input type="checkbox"> 2 cloves garlic</li>
+    <li><input type="checkbox"> 1 cup cream</li>
+    <li><input type="checkbox"> Salt and pepper to taste</li>
   </ul>
+
+  <button id="reset-btn">Reset Checklist</button>
 
   <h2>Instructions</h2>
   <ol>
     <li>Boil pasta until al dente.</li>
-    <li>Sauté garlic in olive oil.</li>
+    <li>In a pan, sauté garlic in olive oil.</li>
     <li>Add cream, salt, and pepper to the pan.</li>
     <li>Combine pasta with the sauce and serve.</li>
   </ol>
 </main>
 
-<footer>
-  <p>&copy; 2025 Cooking Mamas</p>
-</footer>
-
-</body>
-</html>
+<script>
+  // Reset button clears all checkboxes
+  document.getElementById("reset-btn").onclick = () => {
+    document.querySelectorAll("#ingredients input[type=checkbox]")
+      .forEach(cb => cb.checked = false);
+  };
+</script>

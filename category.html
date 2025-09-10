@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recipes</title>
+  <title>Category Recipes</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,29 +24,31 @@
 </footer>
 
 <script>
-fetch("recipes.json")
-.then(res => res.json())
-.then(data => {
-  const selectedCategory = localStorage.getItem("selectedCategory");
-  document.getElementById("category-title").textContent = selectedCategory + " Recipes";
+async function loadCategory() {
+  const res = await fetch("recipes.json");
+  const data = await res.json();
+
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category");
+
+  document.getElementById("category-title").textContent = category + " Recipes";
 
   const recipesGrid = document.getElementById("recipes-grid");
-  const recipes = data.filter(r => r.category === selectedCategory);
+  const recipes = data.filter(r => r.category === category);
 
   recipes.forEach(recipe => {
-    const card = document.createElement("div");
+    const card = document.createElement("a");
+    card.href = `recipes/recipe.html?recipe=${encodeURIComponent(recipe.title)}`;
     card.className = "card";
     card.innerHTML = `
-      <img src="images/${recipe.category.toLowerCase()}/${recipe.image}" alt="${recipe.title}">
+      <img src="images/${recipe.image}" alt="${recipe.title}">
       <h3>${recipe.title}</h3>
     `;
-    card.addEventListener("click", () => {
-      localStorage.setItem("selectedRecipe", JSON.stringify(recipe));
-      window.location.href = "recipe-detail.html";
-    });
     recipesGrid.appendChild(card);
   });
-});
+}
+
+loadCategory();
 </script>
 
 </body>

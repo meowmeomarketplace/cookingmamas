@@ -1,5 +1,12 @@
 [
   {
+    "title": "Corn Bread Pudding",
+    "category": "American",
+    "image": "corn-bread-pudding.jpg",
+    "ingredients": ["1 jiffy corn muffin mix","1 can creamed corn","2 cans drained whole kernel corn","1 cup sour cream", "1/2 cup melted butter","Salt to taste"],
+    "instructions": ["Gently fold and mix.","Bake @350 for 45min."]
+  },
+  {
     "title": "Pasta",
     "category": "American",
     "image": "pasta.jpg",

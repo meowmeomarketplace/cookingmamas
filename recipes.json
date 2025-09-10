@@ -12,5 +12,12 @@
     "image": "pancakes.jpg",
     "ingredients": ["1 cup flour","1 egg","1 cup milk","1 tsp baking powder","Pinch of salt"],
     "instructions": ["Mix all ingredients until smooth.","Heat pan and pour batter.","Cook until bubbles form then flip.","Serve with syrup."]
+  },
+  {
+    "title": "Pho",
+    "category": "Vietnamese",
+    "image": "pho.jpg",
+    "ingredients": ["Beef bones","Rice noodles","Onions and ginger","Star anise, cinnamon"],
+    "instructions": ["Simmer beef bones for broth.","Char onions and ginger.","Add spices and simmer for hours.","Serve with noodles and herbs."]
   }
 ]

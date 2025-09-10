@@ -4,14 +4,14 @@
     "category": "Chinese",
     "image": "mapo-tofu.jpg",
     "ingredients": ["soft tofu", "4 dried shitake mushrooms", "2tbsp doubanjiang", "1tbsp black bean sauce", "crushed sichuan peppercorns", "green onions", "minced ginger", "2tsp shaoxing whine", "five spice", "sugar", "cornstarch"],
-    "instructions": ["Soak mushrooms in 1cup hot water", "Saute doubanjiang, black bean sauce, sichuan peppercorn, green onion, minced ginger.", "Add shaoxing wine, mushroom water, five spice, and sugar. Simmer.", "Add tofu and cornstarch slurry." ]
+    "instructions": ["Soak mushrooms in 1cup hot water.", "Saute doubanjiang, black bean sauce, sichuan peppercorn, green onion, minced ginger.", "Add shaoxing wine, mushroom water, five spice, and sugar. Simmer.", "Add tofu and cornstarch slurry." ]
   },
    {
     "title": "Gyeran Jjim",
     "category": "Korean",
     "image": "gyeran-jjim.jpg",
     "ingredients": ["4 eggs", "1cup water/broth", "green onion", "sesame seeds"],
-    "instructions": ["Mix eggs and salt", "Spread sesame oil at bottom of clay pot", "Cook 6-8 min with stirring in between" ]
+    "instructions": ["Mix eggs and salt.", "Spread sesame oil at bottom of clay pot.", "Cook 6-8 min with stirring in between." ]
   },
    {
     "title": "Ssamjjang",

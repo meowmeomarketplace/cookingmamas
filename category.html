@@ -28,16 +28,22 @@ async function loadCategory() {
   const res = await fetch("recipes.json");
   const data = await res.json();
 
+  // Get category from query string
   const params = new URLSearchParams(window.location.search);
   const category = params.get("category");
 
-  document.getElementById("category-title").textContent = category + " Recipes";
+  if (!category) {
+    document.getElementById("category-title").textContent = "All Recipes";
+  } else {
+    document.getElementById("category-title").textContent = category + " Recipes";
+  }
 
   const recipesGrid = document.getElementById("recipes-grid");
-  const recipes = data.filter(r => r.category === category);
+  const filtered = category ? data.filter(r => r.category === category) : data;
 
-  recipes.forEach(recipe => {
+  filtered.forEach(recipe => {
     const card = document.createElement("a");
+    // Correct path: recipe.html is in recipes/ folder
     card.href = `recipes/recipe.html?recipe=${encodeURIComponent(recipe.title)}`;
     card.className = "card";
     card.innerHTML = `

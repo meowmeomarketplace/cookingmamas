@@ -6,7 +6,7 @@
   <title>Recipe</title>
   <link rel="stylesheet" href="../style.css">
   <style>
-    /* Override for nav buttons to stay side by side */
+    /* Navigation buttons in header - side by side on most screens */
     .nav-buttons {
       display: flex;
       gap: 1rem;
@@ -15,17 +15,19 @@
       flex-wrap: nowrap; /* keep buttons in a row */
     }
 
-    @media (max-width: 400px) {
+    /* Allow buttons to shrink so they fit smaller screens */
+    .nav-btn {
+      min-width: 0;
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+    /* Stack buttons only on extremely narrow screens (<320px) */
+    @media (max-width: 320px) {
       .nav-buttons {
         flex-direction: column;
         gap: 0.6rem;
       }
-    }
-
-    /* Optional: equal width buttons */
-    .nav-btn {
-      min-width: 140px;
-      text-align: center;
     }
   </style>
 </head>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1 id="recipe-title">Recipe</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../categories.html">Categories</a>
+    </nav>
+  </header>
+
+  <main>
+    <img id="recipe-img" class="recipe-img" alt="Recipe Image">
+
+    <h2>Ingredients</h2>
+    <ul id="ingredients"></ul>
+    <button id="reset-btn">Reset Checklist</button>
+
+    <h2>Instructions</h2>
+    <ol id="instructions"></ol>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cooking Mamas</p>
+  </footer>
+
+  <script>
+    async function loadRecipe() {
+      // Load all recipes
+      const res = await fetch("../recipes.json");
+      const data = await res.json();
+
+      // Get recipe name from URL query string
+      const params = new URLSearchParams(window.location.search);
+      const recipeTitle = params.get("recipe");
+
+      // Find the recipe in the JSON
+      const recipe = data.find(r => r.title === recipeTitle);
+
+      if (!recipe) {
+        document.getElementById("recipe-title").textContent = "Recipe Not Found";
+        return;
+      }
+
+      // Populate title and image
+      document.getElementById("recipe-title").textContent = recipe.title;
+      document.getElementById("recipe-img").src = "../images/" + recipe.image;
+      document.getElementById("recipe-img").alt = recipe.title;
+
+      // Populate ingredients with checkboxes
+      const ingredientsList = document.getElementById("ingredients");
+      recipe.ingredients.forEach(item => {
+        const li = document.createElement("li");
+        li.innerHTML = `<input type="checkbox"> ${item}`;
+        ingredientsList.appendChild(li);
+      });
+
+      // Populate instructions
+      const instructionsList = document.getElementById("instructions");
+      recipe.instructions.forEach(step => {
+        const li = document.createElement("li");
+        li.textContent = step;
+        instructionsList.appendChild(li);
+      });
+
+      // Reset button functionality
+      document.getElementById("reset-btn").onclick = () => {
+        document.querySelectorAll("#ingredients input[type=checkbox]").forEach(cb => cb.checked = false);
+      };
+    }
+
+    loadRecipe();
+  </script>
+</body>
+</html>

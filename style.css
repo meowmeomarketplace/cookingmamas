@@ -1,10 +1,34 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap');
 
+/* Make footer stay at bottom using Flexbox */
+html,
 body {
-  font-family: 'Roboto Slab', serif;
+  height: 100%;
+  /* ensures body takes full viewport height */
   margin: 0;
   padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+body main {
+  flex: 1;
+  /* takes remaining space, pushes footer to bottom */
+}
+
+body footer {
+  position: static;
+  /* remove sticky */
+  bottom: auto;
+  /* remove sticky positioning */
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
   background: #fafafa;
   color: #333;
   line-height: 1.6;
@@ -17,18 +41,13 @@ footer {
   /* sage green */
   color: white;
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.3rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  position: sticky;
   z-index: 1000;
 }
 
 header {
   top: 0;
-}
-
-footer {
-  bottom: 0;
 }
 
 /* Logo */
@@ -48,9 +67,7 @@ header h1,
 header h2,
 header a {
   text-decoration: none;
-  /* removes underline */
   color: white;
-  /* keeps text readable */
 }
 
 /* Search Bar */
@@ -86,9 +103,7 @@ h3 {
   font-family: 'Roboto Slab', serif;
   margin-bottom: 1rem;
   color: #333;
-  /* default heading color */
   text-decoration: none;
-  /* ensure no underline */
 }
 
 /* Grid Layout - Clean Polaroid Gallery */
@@ -142,7 +157,6 @@ h3 {
   font-size: 1.1rem;
   color: #4a5a3d;
   text-decoration: none;
-  /* removes underline */
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
@@ -150,7 +164,6 @@ h3 {
   background: #e6ede1;
   transform: translateY(-4px);
   text-decoration: none;
-  /* ensures hover doesn’t add underline */
 }
 
 /* Ingredient Checklist */
@@ -180,7 +193,6 @@ a.button {
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  /* removes underline */
   transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
@@ -189,7 +201,6 @@ a.button:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
   text-decoration: none;
-  /* ensures hover doesn’t add underline */
 }
 
 /* Recipe Instructions */
@@ -210,10 +221,10 @@ a.button:hover {
 
 /* Remove underline from links inside recipe cards */
 .card a {
-  text-decoration: none; /* removes underline */
-  color: inherit;        /* keeps text color same as surrounding text */
+  text-decoration: none;
+  color: inherit;
 }
 
 .card a:hover {
-  text-decoration: none; /* ensures hover doesn’t add underline */
+  text-decoration: none;
 }

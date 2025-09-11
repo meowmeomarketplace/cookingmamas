@@ -68,17 +68,12 @@ main {
   text-align: center;
 }
 
-/* Headings with outline for category/recipe headers */
+/* Headings - normal text */
 h2, h3 {
   font-weight: 600;
   font-family: 'Roboto Slab', serif;
   margin-bottom: 1rem;
-  color: white;
-  text-shadow: 
-    -1px -1px 0 #3A7724,
-    1px -1px 0 #3A7724,
-    -1px 1px 0 #3A7724,
-    1px 1px 0 #3A7724;
+  color: #333; /* default heading color */
 }
 
 /* Grid Layout - Clean Polaroid Gallery */

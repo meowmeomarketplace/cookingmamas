@@ -179,12 +179,23 @@ h3 {
   color: #4a5a3d;
   text-decoration: none;
   transition: background 0.2s ease, transform 0.2s ease;
+
+  width: 100%;        /* fills the grid column */
+  padding: 0 0.5rem;  /* reduced side padding for mobile */
+  box-sizing: border-box;
 }
 
 .category-card:hover {
   background: #e6ede1;
   transform: translateY(-4px);
   text-decoration: none;
+}
+
+/* Increase side padding for larger screens */
+@media (min-width: 900px) {
+  .category-card {
+    padding: 0 1rem;
+  }
 }
 
 /* Ingredient Checklist */

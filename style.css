@@ -37,7 +37,7 @@ header .logo {
 }
 
 header .logo img {
-  max-width: 240px; /* adjust size as needed */
+  max-width: 180px; /* Adjust size */
   height: auto;
   display: inline-block;
 }
@@ -65,7 +65,7 @@ main {
   max-width: 800px;
   margin: 2rem auto;
   padding: 0 1rem;
-  text-align: center;
+  text-align: center; /* Keeps grid centered */
 }
 
 /* Headings */
@@ -94,6 +94,7 @@ h1, h2, h3 {
   text-decoration: none;
   color: inherit;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: left; /* Left-align inner content */
 }
 
 .card:hover {
@@ -104,8 +105,9 @@ h1, h2, h3 {
 /* Card Images */
 .card img {
   width: 100%;
+  height: 180px;
   border-radius: 12px;
-  object-fit: cover;
+  object-fit: cover; /* Make image fit fully */
   margin-bottom: 0.8rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
@@ -128,6 +130,35 @@ h1, h2, h3 {
 .category-card:hover {
   background: #e6ede1;
   transform: translateY(-4px);
+}
+
+/* Recipe Content Page */
+.recipe-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: left; /* Left-align text */
+}
+
+.recipe-content img.recipe-img {
+  width: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+.recipe-content ul,
+.recipe-content ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.recipe-content li {
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 /* Ingredient Checklist */
@@ -164,4 +195,19 @@ button:hover,
 a.button:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .card img {
+    height: 150px;
+  }
+
+  header input[type="text"] {
+    max-width: 90%;
+  }
 }

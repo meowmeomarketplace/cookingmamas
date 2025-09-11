@@ -37,7 +37,7 @@ header .logo {
 }
 
 header .logo img {
-  max-width: 160px; /* adjust size as needed */
+  max-width: 240px; /* adjust size as needed */
   height: auto;
   display: inline-block;
 }

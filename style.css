@@ -37,7 +37,7 @@ header .logo {
 }
 
 header .logo img {
-  max-width: 240px; /* adjust size as needed */
+  max-width: 180px; /* Adjust logo size */
   height: auto;
   display: inline-block;
 }
@@ -68,57 +68,53 @@ main {
   text-align: center;
 }
 
-/* Headings */
-h1, h2, h3 {
-  font-weight: 600; /* SemiBold */
+/* Headings with outline for category/recipe headers */
+h2, h3 {
+  font-weight: 600;
   font-family: 'Roboto Slab', serif;
   margin-bottom: 1rem;
-}
-
-/* Outlined Category & Recipe Headings */
-h2, .category-card h3, .card h3 {
-  color: #ffffff; /* fill color */
-  position: relative;
-  font-weight: 600;
-  text-align: center;
-  text-shadow:
+  color: white;
+  text-shadow: 
     -1px -1px 0 #3A7724,
-     1px -1px 0 #3A7724,
-    -1px  1px 0 #3A7724,
-     1px  1px 0 #3A7724;
+    1px -1px 0 #3A7724,
+    -1px 1px 0 #3A7724,
+    1px 1px 0 #3A7724;
 }
 
-/* Grid Layout */
+/* Grid Layout - Clean Polaroid Gallery */
 .grid {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin-top: 1.5rem;
+  gap: 2rem; /* space between cards */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 2rem;
+  justify-items: center; /* center cards in grid */
 }
 
 /* Card Styling */
 .card {
-  display: block;
+  width: 100%;
+  max-width: 260px; /* uniform size */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: white;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-  padding: 0.8rem;
-  text-decoration: none;
-  color: inherit;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 18px rgba(0,0,0,0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
 }
 
 /* Card Images */
 .card img {
   width: 100%;
-  border-radius: 12px;
+  height: 180px; /* fixed height for polaroid look */
   object-fit: cover;
+  border-radius: 16px 16px 0 0;
   margin-bottom: 0.8rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
@@ -147,6 +143,7 @@ h2, .category-card h3, .card h3 {
 ul {
   list-style: none;
   padding: 0;
+  text-align: left;
 }
 
 ul li {
@@ -154,7 +151,6 @@ ul li {
   margin: 0.5rem 0;
   padding: 0.6rem 0.9rem;
   border-radius: 8px;
-  text-align: left;
 }
 
 /* Buttons */
@@ -177,4 +173,20 @@ button:hover,
 a.button:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transform: translateY(-2px);
+}
+
+/* Recipe Instructions */
+.recipe-content {
+  text-align: left; /* align left for instructions */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.recipe-content img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 1rem;
 }

@@ -31,19 +31,22 @@ footer {
 }
 
 /* Header & Footer */
-header,
-footer {
+header {
   background: #9CAF88;
-  /* sage green */
   color: white;
   text-align: center;
-  padding: 0.5rem;
+  padding: 1rem 1rem; /* independent header padding - change as you like */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
-header {
-  top: 0;
+footer {
+  background: #9CAF88;
+  color: white;
+  text-align: center;
+  padding: 0.2rem 0.2rem; /* independent footer padding - change as you like */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 /* Logo */

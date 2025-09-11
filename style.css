@@ -1,11 +1,9 @@
-/* Import Google Fonts */
+/* Import Google Fonts */ 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap');
 
 /* Make footer stay at bottom using Flexbox */
-html,
-body {
-  height: 100%;
-  /* ensures body takes full viewport height */
+html, body {
+  height: 100%; /* ensures body takes full viewport height */
   margin: 0;
   padding: 0;
 }
@@ -13,25 +11,23 @@ body {
 body {
   display: flex;
   flex-direction: column;
-}
-
-body main {
-  flex: 1;
-  /* takes remaining space, pushes footer to bottom */
-}
-
-body footer {
-  position: static;
-  /* remove sticky */
-  bottom: auto;
-  /* remove sticky positioning */
-}
-
-body {
   font-family: 'Roboto Slab', serif;
   background: #fafafa;
   color: #333;
   line-height: 1.6;
+}
+
+main {
+  flex: 1; /* takes remaining space, pushes footer to bottom */
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+footer {
+  position: static; /* remove sticky */
+  bottom: auto;     /* remove sticky positioning */
 }
 
 /* Header & Footer */
@@ -41,7 +37,7 @@ footer {
   /* sage green */
   color: white;
   text-align: center;
-  padding: 0.3rem;
+  padding: 0.5rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
@@ -88,14 +84,6 @@ header input[type="text"]:focus {
   box-shadow: 0 0 6px rgba(125, 146, 112, 0.6);
 }
 
-/* Content Wrapper */
-main {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  text-align: center;
-}
-
 /* Headings - normal text */
 h2,
 h3 {
@@ -113,6 +101,20 @@ h3 {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   margin-top: 2rem;
   justify-items: center;
+}
+
+/* Two-column layout for mobile */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Card Styling */

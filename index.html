@@ -11,10 +11,10 @@
 <body>
 
   <header>
-    <!-- Logo -->
-    <a href="index.html" class="logo">
+    <div class="logo">
       <img src="images/logo.png" alt="Cooking Mamas Logo">
-    </a>
+    </div>
+    <h1>Cooking Mamas</h1>
     <!-- Search bar -->
     <input type="text" id="search" placeholder="Search recipes...">
   </header>
@@ -40,73 +40,73 @@
 
   <script>
     /* --- Categories list --- */
-const categories = ["American","Vietnamese","Japanese","Korean","Chinese","Pickles","Misc"];
+    const categories = ["American", "Vietnamese", "Japanese", "Korean", "Chinese", "Pickles", "Misc"];
 
-const categoriesGrid = document.getElementById("categories-grid");
-const searchResults = document.getElementById("search-results");
-const searchInput = document.getElementById("search");
-const noResults = document.getElementById("no-results");
+    const categoriesGrid = document.getElementById("categories-grid");
+    const searchResults = document.getElementById("search-results");
+    const searchInput = document.getElementById("search");
+    const noResults = document.getElementById("no-results");
 
-/* --- Render category cards --- */
-function renderCategories() {
-  categoriesGrid.innerHTML = "";
-  categories.forEach(cat => {
-    const a = document.createElement("a");
-    a.href = `category.html?category=${encodeURIComponent(cat)}`;
-    a.className = "card category-card";
-    a.innerHTML = `<h3>${cat}</h3>`;
-    categoriesGrid.appendChild(a);
-  });
-}
+    /* --- Render category cards --- */
+    function renderCategories() {
+      categoriesGrid.innerHTML = "";
+      categories.forEach(cat => {
+        const a = document.createElement("a");
+        a.href = `category.html?category=${encodeURIComponent(cat)}`;
+        a.className = "card category-card";
+        a.innerHTML = `<h3>${cat}</h3>`;
+        categoriesGrid.appendChild(a);
+      });
+    }
 
-/* --- Search recipes by name --- */
-searchInput.addEventListener("input", (e) => {
-  const q = e.target.value.trim().toLowerCase();
+    /* --- Search recipes by name --- */
+    searchInput.addEventListener("input", (e) => {
+      const q = e.target.value.trim().toLowerCase();
 
-  if (!q) {
-    categoriesGrid.style.display = "grid";
-    searchResults.style.display = "none";
-    noResults.style.display = "none";
-    return;
-  }
-
-  fetch("recipes.json")
-    .then(r => r.json())
-    .then(data => {
-      const filtered = data.filter(r => r.title.toLowerCase().includes(q));
-      searchResults.innerHTML = "";
-
-      if (filtered.length === 0) {
-        categoriesGrid.style.display = "none";
+      if (!q) {
+        categoriesGrid.style.display = "grid";
         searchResults.style.display = "none";
-        noResults.style.display = "block";
+        noResults.style.display = "none";
         return;
       }
 
-      noResults.style.display = "none";
-      categoriesGrid.style.display = "none";
-      searchResults.style.display = "grid";
+      fetch("recipes.json")
+        .then(r => r.json())
+        .then(data => {
+          const filtered = data.filter(r => r.title.toLowerCase().includes(q));
+          searchResults.innerHTML = "";
 
-      filtered.forEach(recipe => {
-        const a = document.createElement("a");
-        a.href = `recipes/recipe.html?recipe=${encodeURIComponent(recipe.title)}`;
-        a.className = "card";
-        a.innerHTML = `
-          <img src="images/${recipe.image}" alt="${recipe.title}">
-          <h3>${recipe.title}</h3>
-        `;
-        searchResults.appendChild(a);
-      });
-    })
-    .catch(err => {
-      console.error("Failed to load recipes.json:", err);
-      categoriesGrid.style.display = "grid";
-      searchResults.style.display = "none";
+          if (filtered.length === 0) {
+            categoriesGrid.style.display = "none";
+            searchResults.style.display = "none";
+            noResults.style.display = "block";
+            return;
+          }
+
+          noResults.style.display = "none";
+          categoriesGrid.style.display = "none";
+          searchResults.style.display = "grid";
+
+          filtered.forEach(recipe => {
+            const a = document.createElement("a");
+            a.href = `recipes/recipe.html?recipe=${encodeURIComponent(recipe.title)}`;
+            a.className = "card";
+            a.innerHTML = `
+              <img src="images/${recipe.image}" alt="${recipe.title}">
+              <h3>${recipe.title}</h3>
+            `;
+            searchResults.appendChild(a);
+          });
+        })
+        .catch(err => {
+          console.error("Failed to load recipes.json:", err);
+          categoriesGrid.style.display = "grid";
+          searchResults.style.display = "none";
+        });
     });
-});
 
-/* --- Initialize page --- */
-renderCategories();
+    /* --- Initialize page --- */
+    renderCategories();
   </script>
 
 </body>

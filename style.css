@@ -1,3 +1,6 @@
+/* Import Roboto Slab font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap');
+
 /* Basic Reset */
 * {
   margin: 0;
@@ -7,29 +10,32 @@
 
 /* Body */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
   background-color: #f9fafb;
   color: #1f2937;
-  line-height: 1.75;
+  line-height: 1.6;
   font-size: 1.05rem;
 }
 
 /* Header */
 header {
-  background-color: #111827;
-  color: white;
+  background-color: #a8c0a0;
+  /* Sage green */
+  color: #1f2937;
   padding: 1.5rem 1rem;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 header h1 {
-  margin: 0 0 1rem 0;
-  font-size: 2.2rem;
+  font-family: 'Roboto Slab', serif;
   font-weight: 600;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
 }
 
 /* Search bar */
@@ -41,26 +47,29 @@ header h1 {
   width: 100%;
   max-width: 420px;
   font-size: 1.05rem;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 #search:focus {
   border-color: #facc15;
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.4);
+  outline: none;
 }
 
-/* Main Content */
-main {
-  padding: 2rem 1.5rem 10rem;
-  max-width: 1200px;
+/* Content wrapper */
+.content {
+  max-width: 800px;
   margin: 0 auto;
+  padding: 2rem 1.5rem 10rem;
 }
 
 /* Headings */
 h2 {
-  font-size: 1.75rem;
+  font-family: 'Roboto Slab', serif;
   font-weight: 600;
-  margin: 1.5rem 0 1rem;
-  color: #111827;
+  font-size: 1.75rem;
+  margin: 2rem 0 1rem;
+  color: #1f2937;
   text-align: center;
 }
 
@@ -72,41 +81,43 @@ h2 {
   width: 100%;
 }
 
-/* Category & Recipe Cards */
+/* Category & Recipe Cards - Polaroid style */
 .card {
   background-color: white;
-  border-radius: 12px;
+  border-radius: 16px;
+  border: 1px solid #e0e4d1;
+  /* thin border for polaroid effect */
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
-  width: 100%;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .card img {
   width: 100%;
-  height: 200px;
+  height: auto;
   object-fit: cover;
-  border-bottom: 1px solid #e5e7eb;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .card h3 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 600;
   padding: 1rem;
   text-align: center;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #111827;
+  font-size: 1.25rem;
+  color: #1f2937;
 }
 
 /* Recipe content page */
@@ -121,8 +132,9 @@ h2 {
   width: 100%;
   max-height: 340px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 16px;
   margin-bottom: 1.8rem;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
 .recipe-content ul,
@@ -141,7 +153,8 @@ h2 {
 .recipe-content input[type="checkbox"] {
   margin-right: 0.6rem;
   transform: scale(1.25);
-  accent-color: #111827;
+  accent-color: #a8c0a0;
+  /* sage green highlight */
 }
 
 .recipe-content label {
@@ -164,32 +177,33 @@ h2 {
 
 .nav-btn {
   display: inline-block;
-  padding: 0.6rem 1.2rem;
-  background-color: #111827;
-  color: #f9fafb;
-  font-weight: 500;
-  border-radius: 8px;
+  padding: 0.7rem 1.4rem;
+  background: linear-gradient(135deg, #a8c0a0, #d0e0c0);
+  color: #1f2937;
+  font-weight: 600;
+  border-radius: 12px;
   text-decoration: none;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
   text-align: center;
 }
 
 .nav-btn:hover {
-  background-color: #1f2937;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #b0d0b0, #e0f0d0);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
 .nav-btn:active {
   transform: translateY(0);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
 }
 
 /* Footer */
 footer {
-  background-color: #111827;
-  color: #e5e7eb;
+  background-color: #a8c0a0;
+  /* Sage green */
+  color: #1f2937;
   text-align: center;
   padding: 1rem;
   position: fixed;
@@ -197,11 +211,12 @@ footer {
   width: 100%;
   font-size: 1rem;
   letter-spacing: 0.5px;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.12);
 }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  main {
+  .content {
     padding: 2rem 1rem 10rem;
   }
 }
@@ -244,11 +259,10 @@ footer {
     font-size: 1.75rem;
   }
 
-  /* Recipe content full width on mobile */
   .recipe-content {
     width: 100%;
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     margin: 0;
     max-width: 100%;
   }
@@ -287,18 +301,16 @@ footer {
     font-size: 1rem;
   }
 
-  /* Keep nav buttons side by side on typical phones */
+  /* Keep nav buttons in a row until very tiny screens */
   .nav-buttons {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 0.8rem;
   }
 
-  /* Only stack nav buttons on extremely narrow screens (<320px) */
   @media (max-width: 320px) {
     .nav-buttons {
       flex-direction: column;
-      gap: 0.6rem;
     }
   }
 }

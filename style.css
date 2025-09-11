@@ -13,7 +13,8 @@ body {
 /* Header & Footer */
 header,
 footer {
-  background: #9CAF88; /* sage green */
+  background: #9CAF88;
+  /* sage green */
   color: white;
   text-align: center;
   padding: 1rem;
@@ -46,8 +47,10 @@ header .logo img {
 header h1,
 header h2,
 header a {
-  text-decoration: none; /* removes underline */
+  text-decoration: none;
+  /* removes underline */
   color: white;
+  /* keeps text readable */
 }
 
 /* Search Bar */
@@ -83,7 +86,9 @@ h3 {
   font-family: 'Roboto Slab', serif;
   margin-bottom: 1rem;
   color: #333;
+  /* default heading color */
   text-decoration: none;
+  /* ensure no underline */
 }
 
 /* Grid Layout - Clean Polaroid Gallery */
@@ -137,6 +142,7 @@ h3 {
   font-size: 1.1rem;
   color: #4a5a3d;
   text-decoration: none;
+  /* removes underline */
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
@@ -144,6 +150,7 @@ h3 {
   background: #e6ede1;
   transform: translateY(-4px);
   text-decoration: none;
+  /* ensures hover doesn’t add underline */
 }
 
 /* Ingredient Checklist */
@@ -173,6 +180,7 @@ a.button {
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
+  /* removes underline */
   transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
@@ -181,6 +189,7 @@ a.button:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
   text-decoration: none;
+  /* ensures hover doesn’t add underline */
 }
 
 /* Recipe Instructions */
@@ -199,15 +208,12 @@ a.button:hover {
   margin-bottom: 1rem;
 }
 
-/* Mobile Responsive - 2 columns for cards */
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
-    gap: 1rem;
-  }
+/* Remove underline from links inside recipe cards */
+.card a {
+  text-decoration: none; /* removes underline */
+  color: inherit;        /* keeps text color same as surrounding text */
+}
 
-  .category-card,
-  .card {
-    max-width: 100%;
-  }
+.card a:hover {
+  text-decoration: none; /* ensures hover doesn’t add underline */
 }

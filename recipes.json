@@ -82,6 +82,13 @@
     "image": "budae-jjigae.jpg",
     "ingredients": ["sauce: gochugaru (2spoon), gochujang (halfspoon), soy sauce (1spoon), mirin (1spoon), sugar (1spoon), minced garlic (5)","kimchi","spam","tofu","sausages","mushrooms","sliced onions","green onions","dduk","instant ramen noodles","chicken stock"],
     "instructions": ["Assemble in shallow pot (except for instant ramen noodles, rice cakes, green onion)","Cover enough with stock and add sauce in middle","Simmer then add rice cakes, instant ramen noodles and garnish with green onions."]
+  },
+{
+    "title": "Ca Hap",
+    "category": "Vietnamese",
+    "image": "ca-hap.jpg",
+    "ingredients": ["sauce: olive oil (1spoon), light soy sauce (3spoon), water (2spoon), sugar (1tsp)","sea bass/tilapia/cod/grouper/halibut (1lb)", "julliened ginger", "julliened green onions"],
+    "instructions": ["Sliced ginger and green onion at bottom of dish.","Add salt and pepper fish.","Add sauce and steam for 10-15min."]
   }
 
 ]

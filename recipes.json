@@ -75,5 +75,13 @@
     "image": "yakisoba.jpg",
     "ingredients": ["sauce: worcestershire/bull dog sauce (2spoon), ketchup (2spoon), soy sauce (1spoon), oyster sauce (1spoon), sake (1spoon), sugar (halfspoon), pepper","noodles","onions","cabbage","carrots"],
     "instructions": ["Sautee veggies and salt.","Add noodles with sauce"]
+  },
+   {
+    "title": "Budae Jjigae",
+    "category": "Korean",
+    "image": "budae-jjigae.jpg",
+    "ingredients": ["sauce: gochugaru (2spoon), gochujang (halfspoon), soy sauce (1spoon), mirin (1spoon), sugar (1spoon), minced garlic (5)","kimchi","spam","tofu","sausages","mushrooms","sliced onions","green onions","dduk","instant ramen noodles","chicken stock"],
+    "instructions": ["Assemble in shallow pot (except for instant ramen noodles, rice cakes, green onion)","Cover enough with stock and add sauce in middle","Simmer then add rice cakes, instant ramen noodles and garnish with green onions."]
   }
+
 ]

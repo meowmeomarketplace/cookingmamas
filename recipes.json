@@ -61,5 +61,13 @@
     "image": "corn-bread-pudding.jpg",
     "ingredients": ["1 jiffy corn muffin mix","1 can creamed corn","2 cans drained whole kernel corn","1 cup sour cream", "1/2 cup melted butter","salt to taste"],
     "instructions": ["Gently fold and mix.","Bake @350 for 45min."]
+  },
+   {
+    "title": "Pad See Ew",
+    "category": "Misc",
+    "image": "Pad-See-Ew.jpg",
+    "ingredients": ["sauce: soy sauce (2spoon), dark soy sauce (1spoon), oyster sauce (2spoon), brown sugar (1.5spoon), minced garlic (4), pepper","rice noodles (1lb)","eggs (2)","veggies"],
+    "instructions": ["Sautee veggies and scramble eggs set aside.","Oil in pan and sautee noodles and sauce"]
   }
+
 ]

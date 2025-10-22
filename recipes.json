@@ -90,5 +90,13 @@
     "ingredients": ["sauce: olive oil (1spoon), light soy sauce (3spoon), water (2spoon), sugar (1tsp)","sea bass/tilapia/cod/grouper/halibut (1lb)", "julliened ginger", "julliened green onions"],
     "instructions": ["Sliced ginger and green onion at bottom of dish.","Add salt and pepper fish.","Add sauce and steam for 10-15min."]
   }
+   {
+    "title": "Jjiajangmyun",
+    "category": "Korean",
+    "image": "jjiajangmyun.jpg",
+    "ingredients": ["pork (1lb)", "diced onion", "diced zucchini", "minced garlic (3)", "minced ginger", "jjajang (½ cup)", "oyster sauce (1spoon)", "sugar (2spoon)", "gochugaru", "stock/water", "cornstarch slurry", "julliened cucumber", "yellow pickled radish"],
+    "instructions": ["Cook noodles.","Fry jjajang with neutral oil on medium low heat for 5-10min. Take off.","Fry pork until rendered","Add onions, garlic, ginger, gochugaru to taste for 3min.", "Add zucchini and sautee.", "Add jjajang, oyster sauce, sugar, pepper, salt, msg mix to combine then add stock.", "Simmer then add cornstarch slurry."]
+  }
+
 
 ]

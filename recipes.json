@@ -110,7 +110,15 @@
     "image": "suongnuong.jpg",
     "ingredients": ["pork chops/loin (4-6)", "marinade: sugar (3spoon) + soy sauce (2spoon) + muoc mam (2spoon) + msg (1/2spoon) + neutral oil (4spoon) + minced garlic (6) + minced shallots", "optional: lemon grass"],
     "instructions": ["Marinate pork for at least 1hr but best overnight.","Grill"]
+  },
+   {
+    "title": "Karage",
+    "category": "Japanese",
+    "image": "karage.jpg",
+    "ingredients": ["chicken tigh/breast", "marinade: soy sauce (3spoon) + mirin (1spoon) + sake (1spoon) + ajimoto seasoning (1tsp) + minced garlic (2) + grated ginger", "potato starch"],
+    "instructions": ["Cut chicken in bite size pieces and marinate for 30min.", "Coat each in potato starch", "Fry then double fry"]
   }
+
 
 
 

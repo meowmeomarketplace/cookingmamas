@@ -117,7 +117,15 @@
     "image": "karage.jpg",
     "ingredients": ["chicken tigh/breast", "marinade: soy sauce (3spoon) + mirin (1spoon) + sake (1spoon) + ajimoto seasoning (1tsp) + minced garlic (2) + grated ginger", "potato starch"],
     "instructions": ["Cut chicken in bite size pieces and marinate for 30min.", "Coat each in potato starch", "Fry then double fry"]
+  }, 
+   {
+    "title": "Oyakodon",
+    "category": "Japanese",
+    "image": "oyakodon.jpg",
+    "ingredients": ["chicken thigh", "sauce: water (4spoon) + soy sauce (1spoon) + mirin (1spoon) + sake (1/2spoon) + sugar (1/2tsp)", "sliced onions (½)", "eggs (2)"],
+    "instructions": ["Cut chicken in bite size pieces.", "Add sauce to pan and mix", "Add onions and chicken on top", "Cover and cook until tender", "Lightly beat eggs - keep one yolk aside to add at end, When boiling add eggs and cook to liking."]
   }
+
 
 
 

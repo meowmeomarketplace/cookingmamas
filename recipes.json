@@ -103,7 +103,15 @@
     "image": "thitkhotho.jpg",
     "ingredients": ["pork (400g)", "nuoc mam (3spoon)", "sugar (1spoon)", "minced garlic (2)", "black pepper"],
     "instructions": ["Marinate pork with nuoc mam for 30min.","Add sugar to clay pot and carimalize. Then add neutral oil (1/2spoon)","Add pork to sear + minced garlic + black pepper","Cook for about an hour until looks good"]
+  },
+   {
+    "title": "Suong Nuong",
+    "category": "Vietnamese",
+    "image": "suongnuong.jpg",
+    "ingredients": ["pork chops/loin (4-6)", "marinade: sugar (3spoon) + soy sauce (2spoon) + muoc mam (2spoon) + msg (1/2spoon) + neutral oil (4spoon) + minced garlic (6) + minced shallots", "optional: lemon grass"],
+    "instructions": ["Marinate pork for at least 1hr but best overnight.","Grill"]
   }
+
 
 
 ]
